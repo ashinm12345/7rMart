@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [MultiBrowserTesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="browserQuit"/>
+          <include name="verifyUserCanLoginWithCorrectUsernameAndPassword"/>
+          <include name="verifyUserCanLoginWithInvalidUsernameAndcorrectPassword"/>
+          <include name="verifyUserCanLoginWithcorrectUsernameAndInvalidPassword"/>
+          <include name="initialisebrowser"/>
+          <include name="verifyUserCanLoginWithInvalidUsernameAndPassword"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [MultiBrowserTesting] -->
