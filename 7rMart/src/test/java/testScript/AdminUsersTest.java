@@ -38,6 +38,30 @@ public class AdminUsersTest extends Base {
 		Assert.assertTrue(adminuserspage.isSuccessAlertDisplayed());
 		
 	}
+	/*@Test(priority = 2)
+	public void UpdateAdmin() throws IOException {
+		String loginUserName = ExcelUtility.getStringData(1,0, "LoginPage"); // Fetching username from Excel file. 1,0 represent cell position
+		String loginPassword = ExcelUtility.getStringData(1,1, "LoginPage");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.entertheUserName(loginUserName);
+		loginPage.enterthepassward(loginPassword);
+		loginPage.clicksignButton();
+		
+		loginUserName = ExcelUtility.getStringData(1,0, "LoginPage"); // Fetching username from Excel file. 1,0 represent cell position
+		loginPassword = ExcelUtility.getStringData(1,1, "LoginPage");
+		FakerUtility fakerutility = new FakerUtility();
+		String loginUserNameAdmin = fakerutility.creatARandomFirstName(); 
+		String loginPasswordAdmin = fakerutility.creatARandomFirstName();
+		
+		AdminUserPage adminuserspage = new AdminUserPage(driver);
+		adminuserspage.ClickeditIcon();
+		adminuserspage.EnterUpdateName(loginUserName);
+		adminuserspage.EnterUpdatePass(loginPassword);
+		adminuserspage.EnterEditSelectDropDown();
+		adminuserspage.ClickupdateAdminButton();
+		adminuserspage.SuccessAlertDisplay();
+		Assert.assertTrue(adminuserspage.SuccessAlertDisplay());
+	}*/
 
 
 }

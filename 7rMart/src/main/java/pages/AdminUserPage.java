@@ -16,6 +16,13 @@ public class AdminUserPage {
 	@FindBy(xpath="//button[@name='Create']")WebElement saveAdminButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement successAlertBox;
 	
+	@FindBy(xpath="(//a[contains(@href, 'admin/user/edit')])[1]")WebElement editIcon;
+	@FindBy(xpath="//input[@id='username']")WebElement enterEditUsername;
+	@FindBy(xpath="//input[@id='password']")WebElement enterEditPassword;
+	@FindBy(xpath="//select[@id='user_type']")WebElement enterSelectDropDown;
+	@FindBy(xpath="//button[@name='Update']")WebElement ClickupdateButton;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement successAlert;
+	
 	WebDriver driver;
 	public AdminUserPage(WebDriver driver) 
 		{
@@ -62,6 +69,34 @@ public class AdminUserPage {
 	public boolean isSuccessAlertDisplayed() 
 	{
 		return successAlertBox.isDisplayed();
+	}
+	public void ClickeditIcon() 
+	{
+		editIcon.click();
+	}
+	public void EnterUpdateName(String username) 
+	{
+		enterEditUsername.clear();
+		enterEditUsername.sendKeys(username);
+	}
+	public void EnterUpdatePass(String password) 
+	{
+		enterEditPassword.clear();
+		enterEditPassword.sendKeys(password);
+	}
+	public void EnterEditSelectDropDown()
+	{
+		enterSelectDropDown.click();
+		PageUtitlity pageutility = new PageUtitlity();
+		pageutility.selectByVisibleText(selectDropDown, "Staff");
+	}
+	public void ClickupdateAdminButton()
+	{
+		ClickupdateButton.click();
+	}
+	public boolean SuccessAlertDisplay()
+	{
+		return successAlert.isDisplayed();
 	}
 
 }
