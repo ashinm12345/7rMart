@@ -31,8 +31,8 @@ public class AdminUsersTest extends Base {
 		FakerUtility fakerutility = new FakerUtility();
 		String loginUserNameAdmin = fakerutility.creatARandomFirstName(); 
 		String loginPasswordAdmin = fakerutility.creatARandomFirstName();// Generating random username using FakerUtility
-		adminuserspage.enterNewAdminUsername(loginUserName);
-		adminuserspage.enterNewAdminPassword(loginPassword);
+		adminuserspage.enterNewAdminUsername(loginUserNameAdmin);
+		adminuserspage.enterNewAdminPassword(loginPasswordAdmin);
 		adminuserspage.selectUserType();
 		adminuserspage.clickSaveAdminButton();
 		Assert.assertTrue(adminuserspage.isSuccessAlertDisplayed());

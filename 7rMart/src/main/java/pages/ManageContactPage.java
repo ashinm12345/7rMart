@@ -14,6 +14,7 @@ public class ManageContactPage {
 	@FindBy(xpath="//textarea[@ id='content'and @name='del_time']")WebElement enterTime;
 	@FindBy(xpath="//input[@ id='del_limit']")WebElement enterChargelimit;
 	@FindBy(xpath="//button[@ type=\"submit\"]")WebElement clickUpdate;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")WebElement successAlertBox;
 	
 	
 	 WebDriver driver;
@@ -23,27 +24,31 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 		}
 	    
-	    public void clickManageContactinfo()
+	    public ManageContactPage clickManageContactinfo()
 	    {
 	    	Contactinfo.click();
+	    	return this;
 	    }
 	    
-	    public void ClickEditButton()
+	    public ManageContactPage ClickEditButton()
 	    {
-	    	Clickeditbutton.click();	
+	    	Clickeditbutton.click();
+	    	return this;
 	    }
 	    
-	    public void Enterthenumber(String phoneNumber)
+	    public ManageContactPage Enterthenumber(String phoneNumber)
 	    {
 	    	enterNo.clear();
 	    	enterNo.sendKeys(phoneNumber);
+	    	return this;
 	    	
 	    }
 	    
-	    public void EntertheAddress(String address)
+	    public ManageContactPage EntertheAddress(String address)
 	    {
 	    	enterAddress.clear();
 	    	enterAddress.sendKeys(address);
+	    	return this;
 	    }
 	    
 	    public void EntertheTime(String time)
@@ -52,16 +57,19 @@ public class ManageContactPage {
 	    	enterTime.sendKeys(time);
 	    }
 	    
-	    public void EntertheChargelimit(int Limit)
+	    public ManageContactPage EntertheChargelimit(int Limit)
 	    {
 	    	enterChargelimit.clear();
 	    	enterChargelimit.sendKeys(String.valueOf(Limit));
+	    	return this;
 	    }
 	    
-	    public void ClickUpdateButton()
+	    public ManageContactPage ClickUpdateButton()
 	    {
 	    	clickUpdate.click();
+	    	return this;
 	    }
+	   
 
 
 

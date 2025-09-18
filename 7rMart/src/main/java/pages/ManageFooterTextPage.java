@@ -22,42 +22,49 @@ public class ManageFooterTextPage {
 		PageFactory.initElements(driver, this);
 		}
 	    
-	    public void ClicktheManageFooterinfo()
+	    public ManageFooterTextPage ClicktheManageFooterinfo()
 	    {
 	    	ManageFooterinfo.click();
+	    	return this;
 	    }
 	    
-	    public void ClickEditButton()
+	    public ManageFooterTextPage ClickEditButton()
 	    {
 	    	ClickEdit.click();
+	    	return this;
 	    }
 	    
-	    public void EntertheAdress()
+	    public ManageFooterTextPage EntertheAdress()
 	    {
 	    	enterAdress.clear();
 	    	enterAdress.sendKeys("abcdwet strret");
+	    	return this;
 	    }
 	    
-	    public void entertheEmail()
+	    public ManageFooterTextPage entertheEmail()
 	    {
 	    	enterEmail.clear();
 	    	enterEmail.sendKeys("xyzap@yahoo.com");
+	    	return this;
 	    }
 	    
-	    public void entertheNumber()
+	    public ManageFooterTextPage entertheNumber()
 	    {
 	    	enterNo.clear();
 	    	enterNo.sendKeys("2147483647");
+	    	return this;
 	    }
 	    
-	    public void clickUpdateButton()
+	    public ManageFooterTextPage clickUpdateButton()
 	    {
 	    	clickUpdate.click();
+	    	return this;
 	    }
 	    
 	    public boolean isalertDisply()
 	    {
 	    	return display.isDisplayed();
+	    
 	    }
 
 }

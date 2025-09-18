@@ -27,32 +27,38 @@ public class ManageCategoriePage {
 	this.driver = driver;
 	PageFactory.initElements(driver, this);
 	}
-    public void clickmanagCategorie() {
+    public ManageCategoriePage clickmanagCategorie() {
     	Moreinfo.click();
+    	return this;
     }
-    public void clicknewCategorie() {
+    public ManageCategoriePage clicknewCategorie() {
     	Newcategorie.click();
+    	return this;
     }
-    public void enterCategories() {
+    public ManageCategoriePage enterCategories() {
     	EntertheCategorie.sendKeys("Burger");
+    	return this;
     }
     public void clickchooseFile() {
     	FileUploadUtilities fileUploadutilities=new FileUploadUtilities();
     	fileUploadutilities.fileUploadUsingSendkeys(ChooseFile, Constant.TESTIMAGEPATH);
     }
-    public void ClickSaveButton() {
+    public ManageCategoriePage ClickSaveButton() {
     	ClickSave.click();
+    	return this;
     }
     
-    public void EditManageCategorie()
+    public ManageCategoriePage EditManageCategorie()
     {
     	
     	clickeditCategories.click();
+    	return this;
     }
     
-    public void EntertheCatergories()
+    public ManageCategoriePage EntertheCatergories()
     {
     	enterCategories.sendKeys("change");
+    	return this;
     }
     
     public void ClickthechoosFile()
@@ -61,14 +67,15 @@ public class ManageCategoriePage {
     	fileUploadutilities.fileUploadUsingSendkeys(clickChoosFile, Constant.TESTIMAGEPATH);
     }
     
-    public void Clickupdate()
+    public ManageCategoriePage Clickupdate()
     {
     	clickUpdate.click();
+    	return this;
     }
-    
     public Boolean alertDisplay()
     {
     	return alert.isDisplayed();
     }
+   
     
 }

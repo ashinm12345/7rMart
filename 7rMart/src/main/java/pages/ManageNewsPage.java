@@ -25,30 +25,36 @@ public WebDriver driver;
 	this.driver=driver;
 	PageFactory.initElements(driver, this);
 	}
-	public void selectMoreinfo1() {
+	public ManageNewsPage selectMoreinfo1() {
 		Moreinfo.click();
+		return this;
 	}
-	public void clicknewbutton() {
+	public ManageNewsPage clicknewbutton() {
 		cilckthenew.click();
+		return this;
 	}
-	public void enterthenews(String news) {
+	public ManageNewsPage enterthenews(String news) {
 		
 		entertheNews.sendKeys(news);
+		return this;
 	}
-	public void elicksavebutton() {
+	public ManageNewsPage elicksavebutton() {
 		save.click();
+		return this;
 	}
 	public boolean displayalert() {
 		return alert.isDisplayed();
 	}
 	
 	  
-		public void selectEditbutton() {
+		public ManageNewsPage selectEditbutton() {
 			edit.click();
+			return this;
 		}
-		public void enterubdatenews(String news) {
+		public ManageNewsPage enterubdatenews(String news) {
 			entertheNews.clear();
-			entertheNews.sendKeys(news);	
+			entertheNews.sendKeys(news);
+			return this;
 		}
 		public void clickUpdate() {
 			//WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));

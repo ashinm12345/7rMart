@@ -31,27 +31,31 @@ public class AdminUserPage {
 		}
 	
 	
-	public void clickAddAdminLink()
+	public AdminUserPage clickAddAdminLink()
 	{
 		addAdminLink.click();
+		return this;
 	}
 	
-	public void clickAddNewAdminButton() 
+	public AdminUserPage clickAddNewAdminButton() 
 	{
 		addNewAdminButton.click();
+		return this;
 	}
 	
-	public void enterNewAdminUsername(String username) 
+	public AdminUserPage enterNewAdminUsername(String username) 
 	{
 		addNewAdminTextBox.sendKeys(username);
+		return this;
 	}
 	
-	public void enterNewAdminPassword(String password) 
+	public AdminUserPage enterNewAdminPassword(String password) 
 	{
 		passwordTextBoxAdmin.sendKeys(password);
+		return this;
 	}
 	
-	public void selectUserType() 
+	public AdminUserPage selectUserType() 
 	{
 		selectDropDown.click();
 		//Select select = new Select(selectDropDown);
@@ -59,40 +63,47 @@ public class AdminUserPage {
 		PageUtitlity pageutility = new PageUtitlity();
 		pageutility.selectByVisibleText(selectDropDown, "Admin");
 		//selectByVisibleText(selectDropDown, "Admin");
+		return this;
 	}
 	
-	public void clickSaveAdminButton() 
+	public AdminUserPage clickSaveAdminButton() 
 	{
 		saveAdminButton.click();
+		return this;
 	}
 	
 	public boolean isSuccessAlertDisplayed() 
 	{
 		return successAlertBox.isDisplayed();
 	}
-	public void ClickeditIcon() 
+	public AdminUserPage ClickeditIcon() 
 	{
 		editIcon.click();
+		return this;
 	}
-	public void EnterUpdateName(String username) 
+	public AdminUserPage EnterUpdateName(String username) 
 	{
 		enterEditUsername.clear();
 		enterEditUsername.sendKeys(username);
+		return this;
 	}
-	public void EnterUpdatePass(String password) 
+	public AdminUserPage EnterUpdatePass(String password) 
 	{
 		enterEditPassword.clear();
 		enterEditPassword.sendKeys(password);
+		return this;
 	}
-	public void EnterEditSelectDropDown()
+	public AdminUserPage EnterEditSelectDropDown()
 	{
 		enterSelectDropDown.click();
 		PageUtitlity pageutility = new PageUtitlity();
 		pageutility.selectByVisibleText(selectDropDown, "Staff");
+		return this;
 	}
-	public void ClickupdateAdminButton()
+	public AdminUserPage ClickupdateAdminButton()
 	{
 		ClickupdateButton.click();
+		return this;
 	}
 	public boolean SuccessAlertDisplay()
 	{

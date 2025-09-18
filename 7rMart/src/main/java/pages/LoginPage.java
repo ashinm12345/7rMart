@@ -18,14 +18,17 @@ public WebDriver driver;
 	this.driver=driver;
 	PageFactory.initElements(driver, this);
 	}
-	public void entertheUserName(String userName) {
+	public LoginPage entertheUserName(String userName) {
 		user.sendKeys(userName);
+		return this;
 	}
-	public void enterthepassward(String password2) {
+	public LoginPage enterthepassward(String password2) {
 		password.sendKeys(password2);
+		return this;
 	}
-	public void clicksignButton() {
+	public LogoutPage clicksignButton() {
 		Signbutton.click();
+		return new LogoutPage(driver);
 	}
 	public boolean isdashboardDisplayed() {
 		return dashbard.isDisplayed();
