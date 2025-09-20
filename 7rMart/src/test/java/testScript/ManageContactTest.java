@@ -19,9 +19,9 @@ public class ManageContactTest extends Base {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user);
-		loginpages.enterthepassward(pass);
-		loginpages.clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		//loginpages.enterthepassward(pass);
+		//loginpages.clicksignButton();
 		FakerUtility fakerUtility = new FakerUtility();
 		String phoneNumber = "9995554444";
 		String address = fakerUtility.generateAddress();

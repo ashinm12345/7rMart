@@ -9,18 +9,21 @@ import org.testng.annotations.Test;
 import pages.AdminUserPage;
 
 import pages.LoginPage;
+import pages.LogoutPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
+	AdminUserPage adminuserspage;
+	LogoutPage logoutpage;
 	@Test(priority = 1)
 	public void testAddAdmin() throws IOException {
 		String loginUserName = ExcelUtility.getStringData(1,0, "LoginPage"); // Fetching username from Excel file. 1,0 represent cell position
 		String loginPassword = ExcelUtility.getStringData(1,1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.entertheUserName(loginUserName);
-		loginPage.enterthepassward(loginPassword);
-		loginPage.clicksignButton();
+		loginPage.entertheUserName(loginUserName).enterthepassward(loginPassword).clicksignButton();
+		//loginPage.enterthepassward(loginPassword);
+		//loginPage.clicksignButton();
 		
 		AdminUserPage adminuserspage = new AdminUserPage(driver);
 		adminuserspage.clickAddAdminLink();

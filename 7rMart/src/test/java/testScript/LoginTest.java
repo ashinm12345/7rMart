@@ -17,9 +17,9 @@ public class LoginTest extends Base  {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user);
-		loginpages.enterthepassward(pass);
-		loginpages.clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		//loginpages.enterthepassward(pass);
+		//loginpages.clicksignButton();
 		boolean ishomepageloaded=loginpages.isdashboardDisplayed();
 		Assert.assertTrue(ishomepageloaded);
 
