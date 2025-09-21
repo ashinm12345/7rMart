@@ -3,16 +3,18 @@
 <suite name="parallel_test" parallel="tests">
   
   <parameter name="browser" value="chrome"></parameter>
+  <!--  ChromeTest1 & ChromeTest2 runs in chrome browser  -->
+<!--  Test Block Start -->
   <test  name="ChromeTest1">
     <classes>
-      <class name="testscript.manaageNewTest">
+      <class name="testscript.LoginTest">
       
       </class>
       
       </classes>
       
      </test><!-- Test -->
-     <test name="ChromeTest">
+     <test name="ChromeTest2">
       <classes>
       <class name="testscript.manageNewsTest">
       </class>
