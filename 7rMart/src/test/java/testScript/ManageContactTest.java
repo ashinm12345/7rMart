@@ -8,18 +8,22 @@ import com.aventstack.extentreports.util.Assert;
 
 import constant.Constant;
 import pages.LoginPage;
+import pages.LogoutPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageContactTest extends Base {
+	LoginTest loginpages;
+	LogoutPage logoutpage;
 	@Test
 	public void verifyUserCanLoginManageContact() throws IOException {
 	
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 		FakerUtility fakerUtility = new FakerUtility();

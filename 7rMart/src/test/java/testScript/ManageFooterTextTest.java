@@ -6,10 +6,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import pages.LogoutPage;
 import pages.ManageFooterTextPage;
 import utilities.ExcelUtility;
 
 public class ManageFooterTextTest extends Base {
+	LoginTest loginpages;
+	LogoutPage logoutpage;
 	@Test
 	
 	public void verifyUserCanUpdateManageFooterText() throws IOException
@@ -17,7 +20,8 @@ public class ManageFooterTextTest extends Base {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 		ManageFooterTextPage  manageFooterText=new ManageFooterTextPage(driver);

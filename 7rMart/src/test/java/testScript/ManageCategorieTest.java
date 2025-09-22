@@ -6,17 +6,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import pages.LogoutPage;
 import pages.ManageCategoriePage;
 import utilities.ExcelUtility;
 
 public class ManageCategorieTest extends Base {
+	LoginTest loginpages;
+	LogoutPage logoutpage;
 	@Test
 	public void verifyUserCancreatNewListCategories() throws IOException {
 	
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 	ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
@@ -34,9 +38,10 @@ public class ManageCategorieTest extends Base {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user);
-		loginpages.enterthepassward(pass);
-		loginpages.clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
+		//loginpages.enterthepassward(pass);
+		//loginpages.clicksignButton();
 		ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
 		manageCategorie.clickmanagCategorie();
 		manageCategorie.EditManageCategorie();

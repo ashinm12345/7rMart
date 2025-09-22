@@ -9,10 +9,12 @@ import org.testng.annotations.Test;
 
 
 import pages.LoginPage;
+import pages.LogoutPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
+	LogoutPage logoutpage;
 	@Test
 	public void verifyUserCancreatNewManageNews() throws IOException
 	{
@@ -20,7 +22,8 @@ public class ManageNewsTest extends Base{
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 	ManageNewsPage  manageNews=new ManageNewsPage(driver);

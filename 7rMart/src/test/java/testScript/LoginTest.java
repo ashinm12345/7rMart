@@ -6,10 +6,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import pages.LogoutPage;
 import utilities.ExcelUtility;
 
 
 public class LoginTest extends Base  {
+	LoginTest loginpages;
+	LogoutPage logoutpage;
 	@Test
 	public void verifyUserCanLoginWithCorrectUsernameAndPassword() throws IOException {
 	
@@ -17,7 +20,8 @@ public class LoginTest extends Base  {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage =loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 		boolean ishomepageloaded=loginpages.isdashboardDisplayed();
@@ -32,9 +36,10 @@ public class LoginTest extends Base  {
 		String user=ExcelUtility.getStringData(2,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(2,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user);
-		loginpages.enterthepassward(pass);
-		loginpages.clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage =loginpages.clicksignButton();
+		//loginpages.enterthepassward(pass);
+		//loginpages.clicksignButton();
 		boolean ishomepageloaded=loginpages.isalertDisplayed();
 		Assert.assertTrue(ishomepageloaded);
 	
@@ -46,9 +51,10 @@ public class LoginTest extends Base  {
 	String user=ExcelUtility.getStringData(3, 0,"LoginPage");
 	String pass=ExcelUtility.getStringData(3, 1,"LoginPage");	
 	LoginPage loginpages=new LoginPage(driver);
-	loginpages.entertheUserName(user);
-	loginpages.enterthepassward(pass);
-	loginpages.clicksignButton();
+	loginpages.entertheUserName(user).enterthepassward(pass);
+	logoutpage =loginpages.clicksignButton();
+	//loginpages.enterthepassward(pass);
+	//loginpages.clicksignButton();
 	boolean ispopupmessage=loginpages.isalertDisplayed();
 	Assert.assertTrue(ispopupmessage);
 	
@@ -60,9 +66,10 @@ public class LoginTest extends Base  {
 	String user=ExcelUtility.getStringData(4, 0,"LoginPage");
 	String pass=ExcelUtility.getStringData(4, 1,"LoginPage");
 	LoginPage loginpages=new LoginPage(driver);
-	loginpages.entertheUserName(user);
-	loginpages.enterthepassward(pass);
-	loginpages.clicksignButton();
+	loginpages.entertheUserName(user).enterthepassward(pass);
+	logoutpage =loginpages.clicksignButton();
+	//loginpages.enterthepassward(pass);
+	//loginpages.clicksignButton();
 	boolean ispopupmessage=loginpages.isalertDisplayed();
 	Assert.assertTrue(ispopupmessage);
 	

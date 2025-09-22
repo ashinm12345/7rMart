@@ -21,11 +21,12 @@ public class AdminUsersTest extends Base {
 		String loginUserName = ExcelUtility.getStringData(1,0, "LoginPage"); // Fetching username from Excel file. 1,0 represent cell position
 		String loginPassword = ExcelUtility.getStringData(1,1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.entertheUserName(loginUserName).enterthepassward(loginPassword).clicksignButton();
+		loginPage.entertheUserName(loginUserName).enterthepassward(loginPassword);
+		logoutpage=loginPage.clicksignButton();
 		//loginPage.enterthepassward(loginPassword);
 		//loginPage.clicksignButton();
 		
-		AdminUserPage adminuserspage = new AdminUserPage(driver);
+		//AdminUserPage adminuserspage = new AdminUserPage(driver);
 		adminuserspage.clickAddAdminLink();
 		adminuserspage.clickAddNewAdminButton();
 		

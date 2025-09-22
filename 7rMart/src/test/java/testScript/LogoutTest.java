@@ -11,12 +11,15 @@ import pages.LogoutPage;
 import utilities.ExcelUtility;
 
 public class LogoutTest extends Base {
+	LoginTest loginpages;
+	LogoutPage logoutpage;
 	@Test(priority = 1)
 	public void logoutFromLoginPageTest() throws IOException {
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
 		String pass=ExcelUtility.getStringData(1,1,"LoginPage"); 
 		LoginPage loginpages=new LoginPage(driver);
-		loginpages.entertheUserName(user).enterthepassward(pass).clicksignButton();
+		loginpages.entertheUserName(user).enterthepassward(pass);
+		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
 
