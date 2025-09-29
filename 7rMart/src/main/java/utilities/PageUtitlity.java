@@ -1,5 +1,7 @@
 package utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -21,5 +23,16 @@ public void selectByIndex(WebElement element, int index)
     Select select = new Select(element);
     select.selectByIndex(index);
 	}
+public void javaScriptSendText(WebDriver driver, WebElement webElementName)
+   {		
+   JavascriptExecutor js = (JavascriptExecutor) driver; //typecast the driver to JavascriptExecutor
+   js.executeScript("arguments[0].value='Hello';", webElementName);
+   }
+
+public void javaScriptScrollToBottom(WebDriver driver)
+    {
+	JavascriptExecutor js = (JavascriptExecutor) driver; //typecast the driver to JavascriptExecutor
+    js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+    }
 
 }

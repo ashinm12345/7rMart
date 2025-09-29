@@ -15,7 +15,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 	LogoutPage logoutpage;
-	@Test
+	@Test(priority = 1)
 	public void verifyUserCancreatNewManageNews() throws IOException
 	{
 	
@@ -35,7 +35,7 @@ public class ManageNewsTest extends Base{
 	boolean isalertDisplay=manageNews.displayalert();
 	Assert.assertTrue(isalertDisplay);
 	}
-	@Test
+	@Test(priority = 2)
 	public void verifyUserCanEditManagerNews() throws IOException
 	{
 	

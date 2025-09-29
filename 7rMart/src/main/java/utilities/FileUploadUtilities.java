@@ -20,7 +20,7 @@ public class FileUploadUtilities {
 		{
 		StringSelection string=new StringSelection(filepath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(string,null);
-		Robot robot=new Robot();
+		Robot robot=new Robot();//it use sendkeys&robot
 		robot.delay(2500);
 		robot.keyPress(KeyEvent.VK_CONTROL);//KeyEvent class, VK-vertual key
 		robot.keyPress(KeyEvent.VK_V);

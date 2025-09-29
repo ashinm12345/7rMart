@@ -14,9 +14,10 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageContactTest extends Base {
-	LoginTest loginpages;
+	
 	LogoutPage logoutpage;
-	@Test
+	ManageContactPage manageContact;
+	@Test(priority = 1)
 	public void verifyUserCanLoginManageContact() throws IOException {
 	
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
@@ -33,14 +34,10 @@ public class ManageContactTest extends Base {
 		int chargeLimit = 300;
 		String email="six";
 		
-		ManageContactPage  manageContact =new ManageContactPage(driver);
-		manageContact.clickManageContactinfo();
-		manageContact.ClickEditButton();
-		manageContact.Enterthenumber(phoneNumber);
-		manageContact.EntertheAddress(address);
-		manageContact.EntertheTime(time);
+		//ManageContactPage  manageContact =new ManageContactPage(driver);
+		manageContact.clickManageContactinfo().ClickEditButton().Enterthenumber(phoneNumber).EntertheAddress(address).EntertheTime(time);
 		manageContact.EntertheChargelimit(chargeLimit);
-		manageContact.ClickUpdateButton();
+	    manageContact.ClickUpdateButton();
 		
 		
  

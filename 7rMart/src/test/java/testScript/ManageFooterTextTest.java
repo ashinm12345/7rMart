@@ -11,9 +11,10 @@ import pages.ManageFooterTextPage;
 import utilities.ExcelUtility;
 
 public class ManageFooterTextTest extends Base {
-	LoginTest loginpages;
+	
 	LogoutPage logoutpage;
-	@Test
+	ManageFooterTextPage manageFooterText;
+	@Test(priority = 1)
 	
 	public void verifyUserCanUpdateManageFooterText() throws IOException
 	{
@@ -24,13 +25,8 @@ public class ManageFooterTextTest extends Base {
 		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
-		ManageFooterTextPage  manageFooterText=new ManageFooterTextPage(driver);
-		manageFooterText.ClicktheManageFooterinfo();
-		manageFooterText.ClickEditButton();
-		manageFooterText.EntertheAdress();
-		manageFooterText.entertheEmail();
-		manageFooterText.entertheNumber();
-		manageFooterText.clickUpdateButton();
+		//ManageFooterTextPage  manageFooterText=new ManageFooterTextPage(driver);
+		manageFooterText.ClicktheManageFooterinfo().ClickEditButton().EntertheAdress().entertheEmail().entertheNumber().clickUpdateButton();
 		boolean ispopupmessage=manageFooterText.isalertDisply();
 		Assert.assertTrue(ispopupmessage);
 		

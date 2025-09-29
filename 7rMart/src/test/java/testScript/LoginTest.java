@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 public class LoginTest extends Base  {
 	LoginTest loginpages;
 	LogoutPage logoutpage;
-	@Test
+	@Test(priority = 1, groups = { "regression" })
 	public void verifyUserCanLoginWithCorrectUsernameAndPassword() throws IOException {
 	
 		
@@ -29,7 +29,7 @@ public class LoginTest extends Base  {
 
 		
 	}
-	@Test
+	@Test(priority = 2, groups = { "regression" })
 	public void verifyUserCanLoginWithcorrectUsernameAndInvalidPassword() throws IOException
 	{
 	
@@ -44,7 +44,7 @@ public class LoginTest extends Base  {
 		Assert.assertTrue(ishomepageloaded);
 	
 	}
-	@Test
+	@Test(priority = 3, groups = { "regression" })
 	public void verifyUserCanLoginWithInvalidUsernameAndcorrectPassword() throws IOException
 	{
 	
@@ -59,7 +59,7 @@ public class LoginTest extends Base  {
 	Assert.assertTrue(ispopupmessage);
 	
 	}
-	@Test()
+	@Test(priority = 4, groups = { "regression" }, dataProvider = "LoginProvider")
 	public void verifyUserCanLoginWithInvalidUsernameAndPassword() throws IOException
 	{
 	

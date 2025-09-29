@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtitlity {
-	public static final int IMPLICITWAIT=5;
+	public static final int IMPLICITWAIT=5; //
 	public static final int EXPLICITWAIT=10;
 	
 	
@@ -30,5 +30,7 @@ public class WaitUtitlity {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
 		wait.until(ExpectedConditions.alertIsPresent());
 		}
+	
+	
 
 }

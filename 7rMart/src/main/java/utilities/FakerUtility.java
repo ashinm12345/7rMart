@@ -2,7 +2,7 @@ package utilities;
 
 import com.github.javafaker.Faker;
 
-public class FakerUtility {
+public class FakerUtility {     //used to generate realistic random test data
 	Faker faker = new Faker();
 
 	public String creatARandomFirstName() {

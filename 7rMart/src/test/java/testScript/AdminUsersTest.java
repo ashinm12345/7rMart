@@ -16,7 +16,7 @@ import utilities.FakerUtility;
 public class AdminUsersTest extends Base {
 	AdminUserPage adminuserspage;
 	LogoutPage logoutpage;
-	@Test(priority = 1)
+	@Test(priority = 1, retryAnalyzer = retry.Retry.class, description = "Admin login")
 	public void testAddAdmin() throws IOException {
 		String loginUserName = ExcelUtility.getStringData(1,0, "LoginPage"); // Fetching username from Excel file. 1,0 represent cell position
 		String loginPassword = ExcelUtility.getStringData(1,1, "LoginPage");

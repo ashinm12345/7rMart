@@ -11,9 +11,11 @@ import pages.ManageCategoriePage;
 import utilities.ExcelUtility;
 
 public class ManageCategorieTest extends Base {
-	LoginTest loginpages;
+	
 	LogoutPage logoutpage;
-	@Test
+	ManageCategoriePage manageCategorie;
+	
+	@Test(priority = 1)
 	public void verifyUserCancreatNewListCategories() throws IOException {
 	
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
@@ -23,7 +25,7 @@ public class ManageCategorieTest extends Base {
 		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
-	ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
+	//ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
 	manageCategorie.clickmanagCategorie();
 	manageCategorie.clicknewCategorie();
 	manageCategorie.enterCategories();
@@ -32,7 +34,7 @@ public class ManageCategorieTest extends Base {
 
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void verifyUserCancreatEditCategories() throws IOException {
 	
 		String user=ExcelUtility.getStringData(1,0,"LoginPage");
@@ -42,7 +44,7 @@ public class ManageCategorieTest extends Base {
 		logoutpage=loginpages.clicksignButton();
 		//loginpages.enterthepassward(pass);
 		//loginpages.clicksignButton();
-		ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
+		//ManageCategoriePage manageCategorie =new ManageCategoriePage(driver);
 		manageCategorie.clickmanagCategorie();
 		manageCategorie.EditManageCategorie();
 		manageCategorie.EntertheCatergories();
